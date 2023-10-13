@@ -4,7 +4,7 @@ public class Turkish {
 Scanner scan = new Scanner(System.in);
 	
 	public void tr() {
-		Islemler islemler = new Islemler();
+		Transactions mat = new Transactions();
 
 		String islem = "Islemler \n"
 							+ "(+) Toplama \n"
@@ -28,28 +28,31 @@ Scanner scan = new Scanner(System.in);
 				System.exit(0);
 			}
 			else if (process.equals("+")) {
-				islemler.toplama();
+				mat.toplama();
 			}
 			else if (process.equals("-")) {
-				islemler.cikarma();
+				mat.cikarma();
 			}
 			else if (process.equals("*")) {
-				islemler.carpma();
+				mat.carpma();
 			}
 			else if (process.equals("/")) {
-				islemler.bolme();
+				mat.bolme();
 			}
 			else if (process.equals("^")) {
-				islemler.usHesaplama();
+				mat.usHesaplama();
 			}
 			else if (process.equals("&")) {
-				islemler.karekok();
+				mat.karakok();
 			}
 			else if (process.equals("10")) {
-				islemler.onUssu();
+				mat.onUssu();
 			}
 			else if (process.equals("0")) {
-				islemler.reset();
+				mat.reset();
+				System.out.println(islem);
+				System.out.println();
+				System.out.print("Tercih : ");
 			}
 			
 			else {

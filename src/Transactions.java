@@ -1,143 +1,162 @@
+
+
 import java.util.Scanner;
 
-public class Transactions {
-	
-	Scanner scan =new Scanner(System.in);
-	
-	private double result = 0;	
-	
-	public double additional() { //toplama
-		double number1;
-		double number2;
-		if(result==0) {
+public class Transactions implements ITransactions {
+
+	Scanner scan = new Scanner(System.in);
+	private double sonuc=0;
+	@Override
+	public double toplama() {
+		double a ,b;
+		if(sonuc==0) {
 		System.out.println("...." + " + " + "....." + " = " + "....");
-		number1 = scan.nextDouble();
-		System.out.print(number1 + " + " + "....." + " = " + "....");
-		number2 = scan.nextDouble();
-		result = number1+number2;
-		System.out.println(number1 + (" + " + number2 + (" = " ) + result ));
+		a=scan.nextDouble();
+		System.out.print(a + " + " + "....." + " = " + "....");
+		b=scan.nextDouble();
+		sonuc = a+b;
+		System.out.println(a + (" + " + b + (" = " ) + sonuc ));
 		}
 		else {
-			System.out.print(result + " + ");
-			number1 = scan.nextDouble();
-			result +=(number1);
-			System.out.println(result + " + " + number1 +" = " + result);
+			System.out.print(sonuc + " + ");
+			a=scan.nextDouble();
+			sonuc +=(a);
+			System.out.println(sonuc + " + " + a +" = " + sonuc);
 		}
-		return result;
+		return sonuc;
+		
 		
 	}
-	public double extraction() { //cikarma
-		double number1;
-		double number2;
-		if(result==0) {
-		System.out.println("...." + " - " + "....." + " = " + "....");
-		number1 = scan.nextDouble();
-		System.out.print(number1 + " - " + "....." + " = " + "....");
-		number2 = scan.nextDouble();
-		result = number1-number2;
-		System.out.println(number1 + (" - " + number2 + (" = " ) + result ));
+
+	@Override
+	public double cikarma() {
+		double a,b;
+		if(sonuc==0) {
+			System.out.println("...." + " - " + "....." + " = " + "....");
+			a=scan.nextDouble();
+			System.out.print(a + " - " + "....." + " = " + "....");
+			b=scan.nextDouble();
+			sonuc = a-b;
+			System.out.println(a + (" - " + b + (" = " ) + sonuc ));
+			}
+			else {
+				System.out.print(sonuc + " - ");
+				a=scan.nextDouble();
+				sonuc -=(a);
+				System.out.println(sonuc + " - " + a +" = " + sonuc);
+				
+			}
+			return sonuc;
+		
+	}
+
+	@Override
+	public double carpma() {
+		double a,b;
+		if(sonuc==0) {
+			System.out.println("...." + " * " + "....." + " = " + "....");
+			a=scan.nextDouble();
+			System.out.print(a + " * " + "....." + " = " + "....");
+			b=scan.nextDouble();
+			sonuc = a*b;
+			System.out.println(a + (" * " + b + (" = " ) + sonuc ));			
+		}
+			else {
+				System.out.print(sonuc + " * ");
+				a=scan.nextDouble();
+				sonuc *=(a);
+				System.out.println(sonuc + " * " + a +" = " + sonuc);
+			}
+			return sonuc;
+		
+	}
+
+	@Override
+	public double bolme() {
+		double a,b;
+		if(sonuc==0) {
+			System.out.println("...." + " / " + "....." + " = " + "....");
+			a=scan.nextDouble();
+			System.out.print(a + " / " + "....." + " = " + "....");
+			b=scan.nextDouble();
+			sonuc = a/b;
+			System.out.println(a + (" / " + b + (" = " ) + sonuc ));
+		    }
+			else {
+				System.out.print(sonuc + " / ");
+				a=scan.nextDouble();
+				sonuc /=(a);
+				System.out.println(sonuc + " / " + a +" = " + sonuc);		
+			}
+			return sonuc;
+		
+	}
+
+	@Override
+	public double usHesaplama() {
+		double a,b;
+		if(sonuc==0) {
+			System.out.println("...." + " ^ " + "....." + " = " + "....");
+			a=scan.nextDouble();
+			System.out.print(a + "^ " + "....." + " = " + "....");
+			b=scan.nextDouble();
+			sonuc = Math.pow(a, b);
+			System.out.println(a + ("^" + b + (" = " ) + sonuc ));
+			}
+			else {
+				System.out.print(sonuc + "^ ");
+				a=scan.nextDouble();
+				sonuc = Math.pow(sonuc, a);
+				System.out.println(sonuc + "^" + a +" = " + sonuc);
+			}
+			return sonuc;
+		
+	}
+
+	@Override
+	public double karakok() {
+		double a;
+		if(sonuc==0) {
+		System.out.println("...." + " karakok = ....");
+		a=scan.nextDouble();
+		sonuc = Math.sqrt(a);
+		System.out.print( a +" = "+ sonuc);
 		}
 		else {
-			System.out.print(result + " - ");
-			number1 = scan.nextDouble();
-			result -=(number1);
-			System.out.println(result + " - " + number1 +" = " + result);
-			
+			System.out.print(sonuc + " karakok ");
+			sonuc = Math.sqrt(sonuc);
+			System.out.print(" = " + sonuc);
 		}
-		return result;
+		return sonuc;
+		
 	}
-	public double multiplication() { //carpma
-		double number1;
-		double number2;
-		if(result==0) {
-		System.out.println("...." + " * " + "....." + " = " + "....");
-		number1 = scan.nextDouble();
-		System.out.print(number1 + " * " + "....." + " = " + "....");
-		number2 = scan.nextDouble();
-		result = number1*number2;
-		System.out.println(number1 + (" * " + number2 + (" = " ) + result ));			
-	}
-		else {
-			System.out.print(result + " * ");
-			number1 = scan.nextDouble();
-			result *=(number1);
-			System.out.println(result + " * " + number1 +" = " + result);
-		}
-		return result;
-	}
-	public double section() { //bolme
-		double number1;
-		double number2;
-		if(result==0) {
-		System.out.println("...." + " / " + "....." + " = " + "....");
-		number1 = scan.nextDouble();
-		System.out.print(number1 + " / " + "....." + " = " + "....");
-		number2 = scan.nextDouble();
-		result = number1/number2;
-		System.out.println(number1 + (" / " + number2 + (" = " ) + result ));
-	    }
-		else {
-			System.out.print(result + " / ");
-			number1 = scan.nextDouble();
-			result /=(number1);
-			System.out.println(result + " / " + number1 +" = " + result);		
-		}
-		return result;
-	}
-	public double theExponentOf() { //üssü hesaplama
-		double number1;
-		double number2;
-		if(result==0) {
-		System.out.println("...." + " ^ " + "....." + " = " + "....");
-		number1 = scan.nextDouble();
-		System.out.print(number1 + "^ " + "....." + " = " + "....");
-		number2 = scan.nextDouble();
-		result = Math.pow(number1, number2);
-		System.out.println(number1 + ("^" + number2 + (" = " ) + result ));
-		}
-		else {
-			System.out.print(result + "^ ");
-			number1 = scan.nextDouble();
-			result = Math.pow(result, number1);
-			System.out.println(result + "^" + number1 +" = " + result);
-		}
-		return result;
-	}
-	public double squareRoot() { //karekök
-		double number1;
-		if(result==0) {
-		System.out.println("...." + " square root = ....");
-		number1 = scan.nextDouble();
-		result = Math.sqrt(number1);
-		System.out.print( number1 +" = "+ result);
-		}
-		else {
-			System.out.print(result + " square root ");
-			result = Math.sqrt(result);
-			System.out.println(" = " + result);
-		}
-		return result;
-	}
-	public double tenTheExponentOf() {//10 üssü
-		final int number1  = 10;
-		double number2;
-		if(result==0) {
+
+	@Override
+	public double onUssu() {
+		final int sayi1  = 10;
+		double a;
+		if(sonuc==0) {
 		System.out.println("10" + "^ " + "....." + " = " + "....");
-		System.out.print(number1 + ("^"));
-		number2 = scan.nextDouble();
-		result = Math.pow(number1, number2);
-		System.out.println(number1 + ("^" + number2 + (" = " ) + result ));
+		System.out.print(sayi1 + ("^"));
+		a=scan.nextDouble();
+		sonuc = Math.pow(sayi1, a);
+		System.out.println(sayi1 + ("^" + a + (" = " ) + sonuc ));
 		}
 		else {
-			System.out.println(result + "^ ");
-			result = Math.pow(number1,result);
-			System.out.println(result + "^" + number1 +" = " + result);
+			System.out.println(sonuc + "^ ");
+			sonuc = Math.pow(sayi1,sonuc);
+			System.out.println(sonuc + "^" + sayi1 +" = " + sonuc);
 		}
-		return result;
+		return sonuc;
+		
 	}
+
+	@Override
 	public double reset() {
-		return 0;
+		
+		return sonuc = 0;
+		
 	}
-	
-	
+
+
 }

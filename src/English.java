@@ -4,7 +4,7 @@ public class English {
 	Scanner scan = new Scanner(System.in);
 	
 	public void eng() {
-		Transactions transactions = new Transactions();
+		Transactions mat = new Transactions();
 
 		String transaction = "transactions \n"
 							+ "(+) Additional \n"
@@ -28,28 +28,31 @@ public class English {
 				System.exit(0);
 			}
 			else if (process.equals("+")) {
-				transactions.additional();
+				mat.toplama();
 			}
 			else if (process.equals("-")) {
-				transactions.extraction();
+				mat.cikarma();
 			}
 			else if (process.equals("*")) {
-				transactions.multiplication();
+				mat.carpma();
 			}
 			else if (process.equals("/")) {
-				transactions.section();
+				mat.bolme();
 			}
 			else if (process.equals("^")) {
-				transactions.theExponentOf();
+				mat.usHesaplama();
 			}
 			else if (process.equals("&")) {
-				transactions.squareRoot();
+				mat.karakok();
 			}
 			else if (process.equals("10")) {
-				transactions.tenTheExponentOf();
+				mat.onUssu();
 			}
 			else if (process.equals("0")) {
-				transactions.reset();
+				mat.reset();
+				System.out.println(transaction);
+				System.out.println();
+				System.out.print("preference : ");
 			}
 			
 			else {
