@@ -6,7 +6,8 @@ public class LanguageSelection {
 	Turkish tr = new Turkish();
 	
 	public void sel() {
-		System.out.println("Calculator");
+		System.out.println("CALCULATOR");
+		System.out.println();
 	}
 	
 	public void selection() {
