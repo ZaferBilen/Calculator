@@ -74,20 +74,38 @@ public class Transactions implements ITransactions {
 	@Override
 	public double bolme() {
 		double a,b;
+		try {
 		if(sonuc==0) {
 			System.out.println("...." + " / " + "....." + " = " + "....");
 			a=scan.nextDouble();
 			System.out.print(a + " / " + "....." + " = " + "....");
 			b=scan.nextDouble();
+			 if (b == 0) {
+	                throw new ArithmeticException("Error : Cannot divide by zero.");
+	            }
 			sonuc = a/b;
 			System.out.println(a + (" / " + b + (" = " ) + sonuc ));
+				
 		    }
 			else {
 				System.out.print(sonuc + " / ");
 				a=scan.nextDouble();
+				if (a == 0) {
+	                throw new ArithmeticException("Error : Cannot divide by zero.");
+	            }
 				sonuc /=(a);
 				System.out.println(sonuc + " / " + a +" = " + sonuc);		
 			}
+		}
+		catch (ArithmeticException e) {
+	        System.err.println("Hata: " + e.getMessage());
+	        sonuc = Double.NaN;
+	        System.out.println(sonuc);
+	        System.out.println();
+	        System.out.println("Ýþlem Sýfýrlandý.");
+	        sonuc = 0;
+	        
+	    }
 			return sonuc;
 		
 	}
